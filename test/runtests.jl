@@ -16,9 +16,10 @@
 using Test
 
 @testset "TestSolution" begin
+    root_path = dirname(@__DIR__)
     
     @testset "test_lla" begin
-        lla_content = read("lla.txt", String)
+        lla_content = read(joinpath(root_path, "lla.txt"), String)
         first_line = strip(split(lla_content, "\n")[1])
         split_line = split(first_line)
         
